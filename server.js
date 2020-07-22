@@ -1,4 +1,5 @@
-const express = require('express'); // common js (not import)
+// CommonJS module system (not import)
+const express = require('express');
 const connectDB = require('./config/db');
 
 const app = express();
