@@ -16,6 +16,16 @@ export default (state, action) => {
         contacts: [...state.contacts, action.payload],
       };
 
+    case UPDATE_CONTACT:
+      // map through contacts to match id and update contact
+      // else return original contact
+      return {
+        ...state,
+        contacts: state.contacts.map((contact) =>
+          contact.id === action.payload.id ? action.payload : contact
+        ),
+      };
+
     case DELETE_CONTACT:
       // return current state and filter out contact to delete from ui
       return {
