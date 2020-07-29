@@ -1,7 +1,8 @@
 import React, { useReducer } from 'react';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 import ContactContext from './contactContext';
 import contactReducer from './contactReducer';
+
 import {
   ADD_CONTACT,
   DELETE_CONTACT,
@@ -44,6 +45,13 @@ const ContactState = (props) => {
   // Actions
 
   // Add Contact
+  // adding to API for now...Will eventually reach out API and add to DB
+  const addContact = (contact) => {
+    // generate random id for UI version
+    const id = uuidv4();
+    contact.id = id;
+    dispatch({ type: ADD_CONTACT, payload: contact });
+  };
 
   // Delete Contact
 
@@ -61,6 +69,7 @@ const ContactState = (props) => {
     <ContactContext.Provider
       value={{
         contacts: state.contacts,
+        addContact,
       }}
     >
       {props.children}
