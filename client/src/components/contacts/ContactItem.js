@@ -6,7 +6,7 @@ const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
 
   // pull out from context
-  const { deleteContact } = contactContext;
+  const { deleteContact, setCurrent, clearCurrent } = contactContext;
 
   // pull out of contact prop
   const { id, name, email, phone, type } = contact;
@@ -14,6 +14,8 @@ const ContactItem = ({ contact }) => {
   const onDelete = () => {
     // access to id from contact passed in props
     deleteContact(id);
+
+    clearCurrent();
   };
 
   return (
@@ -43,7 +45,12 @@ const ContactItem = ({ contact }) => {
         )}
       </ul>
       <p>
-        <button className='btn btn-dark btn-sm'>Edit</button>
+        <button
+          className='btn btn-dark btn-sm'
+          onClick={() => setCurrent(contact)}
+        >
+          Edit
+        </button>
         <button className='btn btn-danger btn-sm' onClick={onDelete}>
           Delete
         </button>
