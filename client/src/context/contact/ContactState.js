@@ -41,6 +41,9 @@ const ContactState = (props) => {
     ],
     // Current contact for edit function
     current: null,
+
+    // filteted contacts array
+    filtered: null,
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -77,8 +80,14 @@ const ContactState = (props) => {
   };
 
   // Filter Contacts
+  const filterContacts = (text) => {
+    dispatch({ type: FILTER_CONTACTS, payload: text });
+  };
 
   // Clear Filter
+  const clearFilter = () => {
+    dispatch({ type: CLEAR_FILTER });
+  };
 
   return (
     // Provide functions to component
@@ -86,11 +95,14 @@ const ContactState = (props) => {
       value={{
         contacts: state.contacts,
         current: state.current,
+        filtered: state.filtered,
         addContact,
         deleteContact,
         setCurrent,
         clearCurrent,
         updateContact,
+        filterContacts,
+        clearFilter,
       }}
     >
       {props.children}
