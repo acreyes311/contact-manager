@@ -3,20 +3,19 @@ import AuthContext from './authContext';
 import authReducer from './authReducer';
 
 import {
-REGISTER_SUCCESS,
-REGISTER_FAIL,
-USER_LOADED,
-AUTH_ERROR,
-LOGIN_SUCCESS,
-LOGIN_FAIL,
-LOGOUT,
-CLEAR_ERRORS
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+  CLEAR_ERRORS,
 } from '../types';
 
 const AuthState = (props) => {
-  
   const initialState = {
-    token: localStorage.getItem('token');
+    token: localStorage.getItem('token'),
     isAuthenticated: null,
     user: null,
     loading: true,
@@ -36,7 +35,6 @@ const AuthState = (props) => {
   // Logout
 
   // Clear Errors
-  
 
   return (
     // Provide functions to component
@@ -47,7 +45,6 @@ const AuthState = (props) => {
         loading: state.loading,
         user: state.user,
         error: state.error,
-
       }}
     >
       {props.children}
