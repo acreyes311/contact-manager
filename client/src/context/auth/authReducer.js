@@ -11,7 +11,9 @@ import {
 
 export default (state, action) => {
   switch (action.type) {
+    // Register and Login both return a token
     case REGISTER_SUCCESS:
+    case LOGIN_SUCCESS:
       // Put token into local storage
       localStorage.setItem('token', action.payload.token);
       return {
@@ -29,9 +31,11 @@ export default (state, action) => {
         user: action.payload,
       };
 
-    // Do same for both REGISTER_FAIL and AUTH_ERROR
+    // Do same for REGISTER_FAIL, AUTH_ERROR, LOGIN_FAIL, LOGOUT
     case REGISTER_FAIL:
     case AUTH_ERROR:
+    case LOGIN_FAIL:
+    case LOGOUT:
       // Remove token from local storage
       localStorage.removeItem('token');
       return {

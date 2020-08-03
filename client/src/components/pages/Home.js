@@ -9,7 +9,7 @@ const Home = () => {
   // Run when component loads
   useEffect(() => {
     authContext.loadUser();
-    // disable dependencie
+    // disable dependencies
     // eslint-disable-next-line
   }, []);
 
