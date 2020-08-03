@@ -14,7 +14,15 @@ import ContactState from './context/contact/ContactState';
 import AuthState from './context/auth/AuthState';
 import AlertState from './context/alert/AlertState';
 
+// Utils
+import setAuthToken from './utils/setAuthToken';
+
 import './App.css';
+
+// Check token every time the main component loads
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   return (
