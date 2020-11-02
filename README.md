@@ -9,6 +9,7 @@
 - jsonwebtoken
   - Auth
 - express-validator
+  - Validate data coming in
 - Mongoose
 - nodemon
   - start/stop server. Auto refresh on file change
