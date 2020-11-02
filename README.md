@@ -2,6 +2,17 @@
 
 ## React/Node/Express/MongoDB stack application
 
+# Dependencies
+- Express
+- bcryptjs 
+  - for encrypting passwords
+- jsonwebtoken
+  - Auth
+- express-validator
+- Mongoose
+- nodemon
+  - start/stop server. Auto refresh on file change
+
 # API Usage & Endpoints
 
 ## Register a User [POST /api/users]
