@@ -1,6 +1,6 @@
 # contact-manager
 
-## React/Node/Express/MongoDB stack application
+- React/Node/Express/MongoDB stack application
 
 # Dependencies
 - Express
