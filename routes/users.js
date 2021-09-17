@@ -10,6 +10,7 @@ const User = require('../models/User');
 // @route       Post api/users
 // @desc        Register a user
 // @access      Public
+// uses express validation checks on certain values
 router.post(
   '/',
   [
