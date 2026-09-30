@@ -16,7 +16,7 @@ router.get('/', auth, async (req, res) => {
     }); // Most recent contact first
     res.json(contacts);
   } catch (error) {
-    console.error(err.message);
+    console.error(error.message);
     res.status(500).send('Server Error');
   }
 });
